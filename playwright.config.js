@@ -20,14 +20,19 @@ module.exports = defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.google.com',
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    /* Take screenshot on failure */
+
+    /* Screenshot on failure */
     screenshot: 'only-on-failure',
-    /* Record video on failure */
+
+    /* Video recording */
     video: 'retain-on-failure',
-    /* Global timeout for all tests */
+
+    /* Increased timeout for actions */
     actionTimeout: 30000,
+
     /* Navigation timeout */
     navigationTimeout: 30000
   },
@@ -60,11 +65,18 @@ module.exports = defineConfig({
     },
   ],
 
-  /* Global setup and teardown */
-  globalTimeout: 60000 * 30, // 30 minutes
-  
-  /* Expect options */
+  /* Global timeout for each test */
+  timeout: 60000,
+
+  /* Expect timeout for assertions */
   expect: {
     timeout: 10000
-  }
+  },
+
+  /* Run your local dev server before starting the tests */
+  // webServer: {
+  //   command: 'npm run start',
+  //   url: 'http://127.0.0.1:3000',
+  //   reuseExistingServer: !process.env.CI,
+  // },
 });

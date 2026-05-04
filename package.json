@@ -1,15 +1,15 @@
 {
   "name": "google-playwright-tests",
   "version": "1.0.0",
-  "description": "Playwright automation tests for Google pages",
+  "description": "Playwright automation tests for Google.com",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report",
-    "install:browsers": "playwright install"
+    "report": "playwright show-report",
+    "install-browsers": "playwright install"
   },
   "keywords": [
     "playwright",
